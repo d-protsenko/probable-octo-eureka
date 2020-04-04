@@ -1,5 +1,6 @@
 {
   "issuer": "dan.protsenko@gmail.com",
-  "secret": "syNC7iItXFAr9wCbtF7V",
-  "baseTokenDuration": 604800
+  "secret": "syNC7iItXFAr9wCbtF7VUnZvFsIHLKA0PMsILtLA",
+  "refreshTokenDuration": 604800,
+  "accessTokenDuration": 900
 }
