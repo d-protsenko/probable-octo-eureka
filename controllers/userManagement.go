@@ -4,6 +4,8 @@ import (
 	"awesomeProject/cfg"
 	"awesomeProject/cookie"
 	"awesomeProject/jwt"
+	"awesomeProject/models"
+	"awesomeProject/repositories"
 	"fmt"
 	"github.com/google/uuid"
 	"log"
@@ -20,6 +22,15 @@ func getSecret() []byte {
 	return []byte(cfg.MainJwtConfig.Secret)
 }
 
+func generateNewUUID() string {
+	id, err := uuid.NewUUID()
+	if err != nil {
+		log.Println("Unable to generate UUID. Err:", err)
+		return ""
+	}
+	return id.String()
+}
+
 func GetUsers(writer http.ResponseWriter, request *http.Request) {
 	log.Println("Get all Users")
 }
@@ -30,6 +41,17 @@ func GetUser(writer http.ResponseWriter, request *http.Request) {
 
 func SignUp(writer http.ResponseWriter, request *http.Request) {
 	log.Println("Create User")
+	id := generateNewUUID()
+	if id == "" {
+		return
+	}
+	repositories.InsertUser(
+		models.User{
+			id,
+			"test",
+			"pwd",
+		},
+	)
 }
 
 func SignIn(writer http.ResponseWriter, request *http.Request) {

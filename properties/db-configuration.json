@@ -1,6 +1,6 @@
 {
-  "url": "//awesome-db",
-  "user": "db-user",
-  "password": "s2DTsS1i7qjP3PSFScItGYmuWACEeq1voMCCpxvtKKoq1nm2bDauIU81N8Ns",
+  "url": "awesome_db",
+  "user": "awesome_user",
+  "password": "awesome_user_password",
   "connections": 20
 }
